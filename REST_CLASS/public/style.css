@@ -1,0 +1,19 @@
+h1{
+    color:maroon;
+}
+
+.post{
+background-color: bisque;
+}
+body{
+    background-color: rgb(214, 159, 58);
+}
+a{
+    color: rgb(18, 175, 236);
+    text-decoration: none;
+    font-size: larger;
+    
+}
+a:hover{
+    color: rgb(241, 54, 21);
+}
