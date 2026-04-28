@@ -1,0 +1,144 @@
+div>h1{
+    color: green;
+    background-color: antiquewhite;
+}
+
+.inline-demo {
+      display: inline;
+      background-color: lightblue;
+      padding: 5px;
+    }
+
+.inline-block-demo{
+    display: inline-block;
+    background-color: bisque;
+    width: 100px;
+    height: 50px;
+    margin: 5px;
+    text-align: center;
+    line-height: 50px;
+}  
+
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(204, 238, 148);
+    justify-content: space-around;
+}
+
+.flex-container div{
+    background-color: rgb(97, 146, 42);
+    color: white;
+    padding: 20px;
+    margin: 5px;
+}
+
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 100px auto;
+    gap: 10px;
+    background-color: rgb(129, 201, 201);
+    padding: 10px;
+}
+
+.grid-item{
+    background-color: antiquewhite;
+    border: 1px solid red;
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    line-height: 55px;
+}
+
+
+body {
+      /* font-family: Arial, sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+      background-color: #f4f4f4; */
+
+      text-align: center; font-family: Arial, Helvetica, sans-serif;
+    }
+.content {
+      background-color: lightyellow;
+      padding: 20px;
+      border-radius: 8px;
+    }
+h1 {
+      text-align: center;
+      color: teal;
+    }
+p {
+      font-size: 18px;
+      color: #333;
+    }
+
+@media screen and (max-width: 600px){
+    .content {
+        background-color: lightgreen;
+      }
+
+      p {
+        font-size: 14px;
+        color: darkred;
+      }
+
+      h1 {
+        font-size: 20px;
+        color: darkblue;
+      }
+
+}
+
+.box{
+    width: 150px;
+    height: 150px;
+    margin: 50px auto;
+    background: lightblue;
+    border: 2px solid navy;
+    transition: transform 0,5s;
+    -webkit-transition: transform 0,5s;
+    -moz-transition: transform 0,5s;
+    -ms-transition: transform 0,5s;
+    -o-transition: transform 0,5s;
+}
+
+.box:hover{
+   /*transform: translate(50px,30px);
+   transform: rotate(45deg) ;
+   */transform: scale(2.5,2);
+   background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQir1YP6oQu_lPLPRlRuBZRyefObdn_8UMQ_A&s);
+background-repeat: inherit;
+}
+
+.pagination {
+        display: inline-block;
+        margin: 20px 0;
+      }
+
+      /* Pagination links */
+      .pagination a {
+        color: black;
+        float: left;
+        padding: 10px 16px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+        border: 1px solid #ddd;
+        margin: 0 4px;
+        font-size: 18px;
+      }
+
+      /* Active page */
+      .pagination a.active {
+        background-color: #6c5ce7;
+        color: white;
+        border: 1px solid #6c5ce7;
+      }
+
+      /* Hover effect (not on active) */
+      .pagination a:hover:not(.active) {
+        background-color: #333;
+        color: white;
+      }

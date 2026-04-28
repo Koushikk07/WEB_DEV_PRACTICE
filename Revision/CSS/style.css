@@ -1,0 +1,96 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(187, 255, 238);
+    text-decoration: none;
+}
+
+marquee{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: bisque;
+}
+
+
+
+table,th,td{
+    border: 1px solid black;
+    padding: 10px;
+
+   
+    
+}
+h1{
+    color:rgb(70, 69, 59);
+    text-shadow: 2px 3px 4px rgb(255, 39, 86);
+    
+}
+
+h2{
+    border: 1px solid black;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_ZydU4PTKeSzpgKkOlazzcx43L5SXtiK0RQ&s);
+    padding: 10px; 
+}
+a:link {
+        color: rgb(46, 34, 209);
+      }
+ a:visited {
+        color: rgb(0, 0, 0);
+        
+      }
+
+      a:hover {
+        color: hotpink;
+      }
+
+
+ul{
+    list-style-type: "😍";
+    
+}
+
+form{
+    background-color: antiquewhite !important;
+    justify-content: center;
+    text-align: center;
+}
+div>form{
+    background-color: antiquewhite;
+}
+
+.forms button{
+    background-color: rgb(204, 98, 119);
+    color: rgb(19, 13, 1);
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+    margin: 15px;
+    padding: 5px;
+}
+
+.inline-block-demo{
+    display:grid;
+    background-color: rgb(235, 172, 57);
+    width: 100px;
+    height: 50px;
+    margin: 5px;
+    text-align: center;
+    line-height: 50px;
+    border: 1px solid black;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    margin: 10px;
+    text-align: center;
+    justify-content: center;
+    
+}
+
+.boxes{
+    text-align: center;
+    background-color: antiquewhite;
+    
+}
+
