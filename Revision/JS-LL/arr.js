@@ -56,10 +56,58 @@ const data = {
 };
 
 let det = { ...data, id: 12 };
-
-console.log(det);
+//
+//console.log(det);
 
 //let arr=[1,2,3,4,5,6];
 
 let obj1 = { ...arr };
-console.log(obj1);
+//console.log(obj1);
+
+//rest -- opposite of spread
+// allows a funtion to take an indefinite number of arguments and bundle them in an arry
+
+function sum(...args) {
+  let sum = 0;
+  for (let i = 0; i < args.length; i++) {
+    sum += args[i];
+  }
+  console.log(sum);
+}
+
+//we can also use arguments (keyword to consider the arguuments)
+
+//example
+
+function min() {
+  // console.log(arguments);
+  //console.log(arguments.length);
+  // arguments.push(1);
+  //it works
+}
+
+//console.log(min(10, 12, 23, 12, 3));
+//console.log(sum(10, 12, 23, 12, 3));
+
+//destructuring -- storing values of array into mutiple variables
+
+let names = ["aditya", "narender", "steve", "peter"];
+let [winner, runner] = names; // desnt change in array but store in variables
+// [...others] -- store all elements
+console.log(winner, runner);
+
+//deconstruct for objects
+
+const student = {
+  name: "koushik",
+  age: 14,
+  class: "b.tech",
+  branch: "cse",
+  college: "UCET, MGU",
+  username: "koushik@1212",
+  password: "password",
+};
+
+//let { username, password } = student; // we must have to use the same key if we want to store
+
+let { username: user, password } = student; //{user, password}
