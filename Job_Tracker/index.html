@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Job Application Tracker</title>
+  </head>
+  <body>
+    <h1>Job Application Tracker</h1>
+
+    <hr />
+
+    <h2>Add New Application</h2>
+
+    <form>
+      <label>Company Name</label><br />
+      <input type="text" placeholder="Enter company name" /><br /><br />
+
+      <label>Job Role</label><br />
+      <input type="text" placeholder="Software Developer" /><br /><br />
+
+      <label>Package (LPA)</label><br />
+      <input type="number" placeholder="6" /><br /><br />
+
+      <label>Applied Date</label><br />
+      <input type="date" /><br /><br />
+
+      <label>Status</label><br />
+      <select>
+        <option>Applied</option>
+        <option>Online Assessment</option>
+        <option>Interview</option>
+        <option>Rejected</option>
+        <option>Selected</option></select
+      ><br /><br />
+
+      <label>Application Link</label><br />
+      <input type="url" placeholder="Paste job link" /><br /><br />
+
+      <label>Notes</label><br />
+      <textarea rows="4" cols="40"></textarea><br /><br />
+
+      <button type="submit">Add Application</button>
+    </form>
+
+    <hr />
+
+    <h2>Application Statistics</h2>
+
+    <p>Total Applications: 25</p>
+    <p>Interviews: 5</p>
+    <p>Rejected: 15</p>
+    <p>Selected: 1</p>
+
+    <hr />
+
+    <h2>Application List</h2>
+
+    <table border="1">
+      <tr>
+        <th>Company</th>
+        <th>Role</th>
+        <th>Package</th>
+        <th>Status</th>
+        <th>Date</th>
+      </tr>
+
+      <tr>
+        <td>Google</td>
+        <td>SDE Intern</td>
+        <td>12 LPA</td>
+        <td>Interview</td>
+        <td>10-06-2026</td>
+      </tr>
+
+      <tr>
+        <td>TCS</td>
+        <td>Software Engineer</td>
+        <td>7 LPA</td>
+        <td>Applied</td>
+        <td>08-06-2026</td>
+      </tr>
+    </table>
+  </body>
+</html>
