@@ -1,0 +1,51 @@
+header img{
+    border-radius: 400px;
+    -webkit-border-radius: 400px;
+    -moz-border-radius: 400px;
+    -ms-border-radius: 400px;
+    -o-border-radius: 400px;
+    height: 70px;
+}
+header span{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    padding: 10px;
+   
+    
+}
+header span img {
+    padding: 10px;
+}
+
+*{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+header span a{
+    font-weight: bold;
+    margin: 10px;
+    text-decoration: none;
+    color: black;
+    
+    
+}
+#title{
+    margin-right: 60px;
+}
+header span a:hover{
+    color: rgb(187, 123, 13);
+    font-size: large;
+   
+}
+
+header{
+    background-color: rgb(187, 187, 187) !important;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    margin: 0px;
+}
+
