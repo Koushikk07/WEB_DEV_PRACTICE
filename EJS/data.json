@@ -1,0 +1,116 @@
+{
+  "cars": {
+    "name": "Sports Cars",
+    "followers": 25000,
+    "following": 120,
+    "posts": [
+      {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL0CAvyibQjniJeX000HfBZ3jt18wUgWwW_L7z-Oy_PA&s=10",
+        "likes": 2400,
+        "comments": 320
+      },
+      {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL0CAvyibQjniJeX000HfBZ3jt18wUgWwW_L7z-Oy_PA&s=10",
+        "likes": 3150,
+        "comments": 410
+      },
+      {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL0CAvyibQjniJeX000HfBZ3jt18wUgWwW_L7z-Oy_PA&s=10",
+        "likes": 2800,
+        "comments": 295
+      }
+    ]
+  },
+
+  "koushik": {
+    "name": "Koushik",
+    "followers": 18500,
+    "following": 320,
+    "posts": [
+      {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL0CAvyibQjniJeX000HfBZ3jt18wUgWwW_L7z-Oy_PA&s=10",
+        "likes": 4210,
+        "comments": 512
+      },
+      {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL0CAvyibQjniJeX000HfBZ3jt18wUgWwW_L7z-Oy_PA&s=10",
+        "likes": 3890,
+        "comments": 448
+      },
+      {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL0CAvyibQjniJeX000HfBZ3jt18wUgWwW_L7z-Oy_PA&s=10",
+        "likes": 3650,
+        "comments": 396
+      }
+    ]
+  },
+
+  "aditya": {
+    "name": "Butharaju Aditya",
+    "followers": 14200,
+    "following": 245,
+    "posts": [
+      {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL0CAvyibQjniJeX000HfBZ3jt18wUgWwW_L7z-Oy_PA&s=10",
+        "likes": 2100,
+        "comments": 230
+      },
+      {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL0CAvyibQjniJeX000HfBZ3jt18wUgWwW_L7z-Oy_PA&s=10",
+        "likes": 2560,
+        "comments": 312
+      },
+      {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL0CAvyibQjniJeX000HfBZ3jt18wUgWwW_L7z-Oy_PA&s=10",
+        "likes": 2750,
+        "comments": 340
+      }
+    ]
+  },
+
+  "Narender": {
+    "name": "Tupakula Narender",
+    "followers": 22100,
+    "following": 180,
+    "posts": [
+      {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL0CAvyibQjniJeX000HfBZ3jt18wUgWwW_L7z-Oy_PA&s=10",
+        "likes": 3100,
+        "comments": 380
+      },
+      {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL0CAvyibQjniJeX000HfBZ3jt18wUgWwW_L7z-Oy_PA&s=10",
+        "likes": 2980,
+        "comments": 355
+      },
+      {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL0CAvyibQjniJeX000HfBZ3jt18wUgWwW_L7z-Oy_PA&s=10",
+        "likes": 3300,
+        "comments": 405
+      }
+    ]
+  },
+
+  "Sattu Ram": {
+    "name": "Sattu Ram",
+    "followers": 19400,
+    "following": 270,
+    "posts": [
+      {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL0CAvyibQjniJeX000HfBZ3jt18wUgWwW_L7z-Oy_PA&s=10",
+        "likes": 4400,
+        "comments": 580
+      },
+      {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL0CAvyibQjniJeX000HfBZ3jt18wUgWwW_L7z-Oy_PA&s=10",
+        "likes": 4700,
+        "comments": 620
+      },
+      {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL0CAvyibQjniJeX000HfBZ3jt18wUgWwW_L7z-Oy_PA&s=10",
+        "likes": 4100,
+        "comments": 540
+      }
+    ]
+  }
+}
