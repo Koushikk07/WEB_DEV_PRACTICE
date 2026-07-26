@@ -1,0 +1,43 @@
+*{
+    background-color: rgb(235, 207, 169);
+    text-align: center;
+}
+
+#main-content{
+    display: flexbox;
+    flex-direction: row;
+    
+    color: rgb(38, 29, 84);
+    background-color: rgb(235, 164, 77);
+    padding: 10px;
+}
+
+.box{
+  
+    background-color: rgb(197, 150, 92);
+ text-align: center;
+
+ padding: 10px;
+ margin: 10px;
+ border: 1px black dotted;
+
+}
+
+#btn{
+    background-color: rgb(96, 126, 96);
+}
+
+nav{
+    background-color: rgb(140, 137, 137);
+    padding: 5px;
+}
+
+nav span{
+    background-color: rgb(134, 124, 124);
+    padding: 2px;
+    margin: 6px;
+}
+
+#name{
+    color: rgb(30, 11, 11);
+}
