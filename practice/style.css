@@ -41,3 +41,17 @@ nav span{
 #name{
     color: rgb(30, 11, 11);
 }
+
+#btn:hover{
+    background-color: rgb(233, 153, 100);
+}
+
+button{
+    background-color: rgb(126, 126, 248);
+}
+
+button:hover{
+
+    background-color: rgb(233, 153, 100);
+    
+}

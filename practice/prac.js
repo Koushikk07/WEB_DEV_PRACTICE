@@ -6,3 +6,9 @@ if (age != null) {
 const addNumbers = (a, b) => {
   return a + b;
 };
+
+name = "Gudapur Koushik";
+
+let num = 5;
+newnum = num++;
+newnum = ++num;
