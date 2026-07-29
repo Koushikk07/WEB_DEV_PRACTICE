@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Kiyotai</title>
+  </head>
+  <body>
+    <nav>
+      <span>kiyotai</span>
+      <span>home</span>
+      <span>career</span>
+      <span>info</span>
+      <span>support</span>
+      <span><button>lang:ENG</button></span>
+    </nav>
+    
+    <h1>Kiyotai Posts</h1>
+    <hr><hr>
+    <% for(post of posts) {%>
+        <div>
+            <h3 class="user"> @<%=post.username%> </h3>
+            <h5 class="content"> <%=post.content%> </h5>
+            <span>
+                <button>Follow</button>
+                <button>view</button>
+            </span>
+            <br>
+        </div>
+
+        <%}%>
+
+  </body>
+</html>
