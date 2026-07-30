@@ -51,3 +51,30 @@ Implement: GET /posts/:id
 show route
 
 GET  /posts/:id     to get one post(using id)
+
+Create id for posts
+
+UUID Package
+
+University unique indentifier
+
+-- npm install uuid
+
+
+
+
+Implement: PATCH /posts/:id   (PUT also works)
+update route
+
+PATCH  /posts/:id    to update specific post
+
+
+Create form for Update
+edit route
+serve the edit form    GET     /posts/:id/edit
+
+
+Implement: /posts/:id
+Destroy route
+
+DELETE     /posts/:id    to delete specific post

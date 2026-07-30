@@ -3,7 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <title><%=post.username%></title>
   </head>
-  <body></body>
+  <body>
+    <h2>Here is your post inDetail!</h2>
+    <hr />
+    <hr />
+    <p>Post id:<%=post.id%></p>
+    <br />
+    <div class="users">
+      <h3 class="user">
+        <b><i>Username : @<%=post.username%></i></b>
+      </h3>
+      <h4 class="content">Content: <%=post.content%></h4>
+      <br /><br />
+      <button>follow</button>
+      <button>view</button>
+    </div>
+  </body>
 </html>

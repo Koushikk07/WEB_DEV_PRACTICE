@@ -25,7 +25,9 @@
             <h5 class="content"> <%=post.content%> </h5>
             <span>
                 <button class="btn1">Follow</button>
-                <button class="btn1">view</button>
+                <a href="http://localhost:8000/posts/<%=post.id%>"><button class="btn1">View</button></a>
+                <a href="http://localhost:8000/posts/<%=post.id%>/edit"><button class="btn1">Edit</button></a>
+                <form method="post" action="/posts/<%=post.id%>?_method=DELETE"><button>Delete</button></form>
             </span>
             <br>
         </div>
