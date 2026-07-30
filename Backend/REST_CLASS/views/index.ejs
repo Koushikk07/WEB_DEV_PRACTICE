@@ -18,18 +18,21 @@
     
     <h1>Kiyotai Posts</h1>
     <hr><hr>
+    <a href="http://localhost:8000/posts/new"><button>New User</button></a>
     <% for(post of posts) {%>
-        <div>
+        <div class="users">
             <h3 class="user"> @<%=post.username%> </h3>
             <h5 class="content"> <%=post.content%> </h5>
             <span>
-                <button>Follow</button>
-                <button>view</button>
+                <button class="btn1">Follow</button>
+                <button class="btn1">view</button>
             </span>
             <br>
         </div>
 
         <%}%>
+
+        <center></center>
 
   </body>
 </html>

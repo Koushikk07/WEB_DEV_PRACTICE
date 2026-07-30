@@ -32,3 +32,22 @@ Implement: GET /posts
  index route
 
  GET  /posts to get data from all posts
+
+Implement: POST /posts
+create route
+
+POST /posts       to add a new post
+
+2 routes
+. Serve the form      GET    /posts/new
+. Add the new post    POST   /posts
+
+
+Redirect 
+
+res.redirect(URL)
+
+Implement: GET /posts/:id
+show route
+
+GET  /posts/:id     to get one post(using id)

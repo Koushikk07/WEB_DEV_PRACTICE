@@ -1,11 +1,11 @@
 *{
-    background-color: rgb(131, 184, 230);
+    background-color: rgb(211, 208, 204);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     
 }
 
 nav {
-    background-color: rgb(240, 195, 148);
+    background-color: rgb(146, 139, 131);
     padding: 10px;
     border: 1px solid black;
     border-radius: 10px;
@@ -33,16 +33,46 @@ nav span{
 }
 
 button{
-    background-color: rgb(242, 242, 179);
+    background-color: rgb(240, 188, 110);
     color: brown;
     border-radius: 15px;
     -webkit-border-radius: 15px;
     -moz-border-radius: 15px;
     -ms-border-radius: 15px;
     -o-border-radius: 15px;
+    margin-bottom: 3px;
 }
 
 button:hover{
     background-color: rgb(245, 215, 97);
     color: red;
+}
+
+.user{
+    font-family:cursive;
+    font-weight: bold;
+    margin: 10px;
+   
+    background-color: rgb(244, 233, 219);
+}    
+
+.users{
+    text-align: center;
+    justify-content: center;
+    background-color: rgb(244, 233, 219);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border: 1px dotted black;
+    margin: 15px;
+}
+
+.content{
+    background-color: rgb(244, 233, 219);
+}
+
+span{
+    background-color: rgb(244, 233, 219);
 }
