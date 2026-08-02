@@ -1,0 +1,87 @@
+DATABASE
+
+-- it is a collection of data in a format that can be easily accessed.
+
+why?
+> can store large data
+> features like security, scalbility etc
+> easier to insert, update or delete data
+
+
+SQL                          NOSQL
+
+Relational Database          Non Relational Database
+(data stored in tables)      (data stored in document/key-value/graphs)
+
+eg: MySQL, Oracle            eg: MongoDb, Cassandra, Neo4j etc
+PostgreSQL   
+
+
+SQL -- Structured Query Language
+
+it is a programming language used to interact with relational databases.
+
+create Database db_name;
+use db_name;
+
+table create
+
+create table table_name(
+    col_name1 datatype contraints,
+    col_name2 datatype contraints,
+    col_name3 datatype contraints,
+    col_name4 datatype contraints,
+);
+
+example:  create table student(
+    rollno INT,
+    name VARCHAR(30),
+    age INT
+);
+
+INSERT INTO student
+values
+(101,"koushik",12),
+(102,"karthik",16),
+(103,"sahoo",19);
+
+Select * from student;
+
+
+DATABASE QUERIES
+
+Create database db_name;
+Create database if not exists db_name;
+
+
+DROP database db_name;
+DROP database if exists db_name;
+
+show databases;
+show tables;
+
+
+TABLE QUERIES
+
+--CREATE
+
+(define schema // columns)
+
+create table table_name(
+    sno int unique,
+    name varchar(30),
+    email varchar(30),
+    mobileno int,
+    followers int,
+    followering int
+
+
+);
+
+
+
+--INSERT
+--UPDATE
+--AFTER
+--TRUNCATE
+--DELETE
