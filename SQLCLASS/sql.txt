@@ -73,7 +73,7 @@ create table table_name(
     email varchar(30),
     mobileno int,
     followers int,
-    followering int
+    followering int 
 
 
 );
@@ -81,7 +81,80 @@ create table table_name(
 
 
 --INSERT
+
+Insert into table
+
+     INSERT INTO table_name (colname1, colname2); 
+     values
+     (col1_v1,col2_v1),
+      (col1_v2,col2_v2);
 --UPDATE
 --AFTER
 --TRUNCATE
 --DELETE
+
+SELECT COMMAND
+
+selects and show data form the database
+
+select col1,col2 from table_name;
+
+select * from tb_name;  //shows all
+DATA TYPES
+
+--CHAR
+--VARCHAR
+--BLOB
+--INT
+--TINYINT
+--BIGINT
+--BIT
+--FLOAT
+--DOUBLE
+--BOOLEAN
+--DATA
+--YEAR
+
+
+-> CONSTRAINTS
+   rules for data in the table
+
+   NOT NULL     columns cannot have a null value
+   UNIQUE       all values in common are different
+   DEFAULT       sets the default value of a columns
+   CHECK         it can limit the values allowes in a column
+
+   ex: CONSTRAINT age_check CHECK (age>=18 and city="Delhi");
+
+   --> KEY CONSTRAINTS
+
+
+   PRIMARY KEY
+
+    -- makes a column unique and not null but used only for makes
+
+    create table temp(id int not null, PRIMARY KEY (id));  
+
+
+    FOREIGN KEY
+
+    --prevent actions that would destory links between tables
+
+     create table temp (cust_id int, foreign key(cust_id) references customer (id))
+
+
+     What are KEYS?
+
+     keys are special columns in the table
+
+     primary key
+
+     --its a column (or set of columns) in a table that uniquely identifies each row. (a unique id)
+     there is only 1 PK & it should be NOT null.
+
+     foreign key
+
+     --a FK is a column (or set of columns) in a table that refers to the primary key
+      FKS can have duplicate and null values
+
+      there can be multiple FKs.
