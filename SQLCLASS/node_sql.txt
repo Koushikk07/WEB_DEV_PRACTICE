@@ -1,0 +1,45 @@
+FAKER
+to generate fake data
+
+userid usename email password
+
+let getUser = ()=>{
+    return [
+        faker.datatype.uuid(),
+        faker.internet.username(),
+        faker.internet.email(),
+        faker.internet.password(),
+    ];
+};
+
+
+MySQL2 Package
+
+to connect Node with MySQL
+
+connection.end(); //to close connection
+
+const connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    database: 'test'
+});
+
+to show
+
+try{
+connection.query("SHOW TABLES",(err,result)=>{
+    if(err) throw err;
+    console.log(result);
+})
+}catch(err){
+    console.log(err);
+}
+
+
+USING SQL form CLI
+
+/usr/local/mysql/bin/mysql -u root -p
+
+create schema.SQL
+source schema.sql // in CLI

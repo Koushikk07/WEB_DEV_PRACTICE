@@ -88,10 +88,47 @@ Insert into table
      values
      (col1_v1,col2_v1),
       (col1_v2,col2_v2);
+
 --UPDATE
---AFTER
+
+     update existing rows  if ERR (SET SQL_SAFE_UPDATES = 0)
+
+     UPDATE table_name
+     SET col1=val1,col2=val2
+     WHERE conditions;
+
+
+--ALTER
+   to change the schema
+
+   ADD column
+    
+    ALTER TABLE table_name
+    ADD COLUMN col_name datatpye CONSTRAINT;
+
+   DROP column
+
+    ALTER TABLE table_name
+    DROP COLUMN column_name;
+
+   RENAME column
+     
+     ALTER TABLE table_name
+     RENAME TO new_table_name;
+
+
 --TRUNCATE
+   
+   --to delete tables data
+
+   TRUNCATE TABLE table_name;
+  
 --DELETE
+
+   delete existing rows
+
+   DELETE FROM table_name
+   WHERE condition;
 
 SELECT COMMAND
 
@@ -158,3 +195,105 @@ DATA TYPES
       FKS can have duplicate and null values
 
       there can be multiple FKs.
+
+
+      Where Clause
+
+      to define some conditions
+
+      select col1, col2 from table_name
+      where conditions;
+
+      OPERATORS _ Where
+
+      Arithmetic
+        --  +, -, *, /, %
+      Comparison
+        -- =, !=, >,>=, <, <=
+      Logical
+        -- AND, OR, NOT, IN, BETWEEN, ALL , LIKE, ANY
+      Bitwise
+        -- & (bitwise and), | (bitwise OR) 
+
+
+      *** Frequently used OPERATORS
+
+      AND         to check for both conditions to be true
+
+      OR          to check for one of the conditions to be true
+
+      BETWEEN     select for a given range
+
+      IN          matches any value in the list
+
+      NOT         to negate the given condition
+
+
+      limit Clause
+      sets an upper limit on number of (tuples) rows to be returned
+
+      SELECT col1, col2 FROM tb_name
+      LIMIT number;
+
+
+
+      order by Clause
+
+      to sort in ascending or descending order    (ASC || DESC)
+
+      ex: SELECT * from table_name ORDER BY colname ASC;
+
+
+      AGGREGATE FUNCTIONS
+
+      perform a calculation on a set of values and return a single value.
+
+      >COUNT()
+      >MAX()
+      >MIN()
+      >SUM()
+      >AVG()
+
+
+      EDX: SELECT MAX(marks) FROM  student;
+
+
+      Group by Clause
+
+      groups rows the have the same value into summary rows
+      it collects data from multiple records and groups the result by one or more column.
+
+      SELECT col1,col2
+      FROM table_name
+      GROUP BY col_name(s);
+
+      *Generally we use group by with some aggregation function
+
+
+      HAving Clause
+
+      similar to where i.e. applies some conditions on rows.
+      But it used when we want to apply any condition after grouping.
+
+      SELECT col1, col2
+      FROM table_name
+      GROUP BY col_name(S)
+      HAVING condition
+
+      ** WHERE is for the table, HAVING is for Group
+      ** Grouping is necessary for HAVING
+
+EX:  Select age, max(followers)
+     FROM user
+     Group by age
+     having max(followers)>200;
+
+    
+*** GENERAL ORDER ***
+
+SELECT column(s)
+FROM table_name
+WHERE condition
+GROUP BY column(s)
+HAVING condition
+ORDER BY column(s) ASC;
