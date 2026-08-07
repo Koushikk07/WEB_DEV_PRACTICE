@@ -19,6 +19,11 @@ to connect Node with MySQL
 
 connection.end(); //to close connection
 
+
+client(fortend)   ---->   server(apis)----> SQL 
+                                      <----
+
+here, to make connection(btw server and data) we use mysql2 package 
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -43,3 +48,65 @@ USING SQL form CLI
 
 create schema.SQL
 source schema.sql // in CLI
+
+
+Routing
+
+GET/ shows no of user in database
+
+get/users show users (email id username) ejs
+
+patch/user/:id  username edit
+
+post /user  new user
+
+delete /user/:id  user delete
+
+
+SETTING UP EXPRESS APP
+
+GET/  fetch & show total number of user on our APP
+
+app.get("/",(req,res)=>{
+
+    let q = 'SELECT count(*) FROM user';
+    try{
+        connection.query(q,(err,result)=>{
+        if(err) throw err;
+        let count = result[0][count(*)];
+        res.render("home.ejs",{count});
+        });
+
+    }catch(err){
+        res.send("some error occured");
+
+    }
+
+})
+
+CREATING OUR ROUTES
+
+GET/user  Fetch & show (userid, username, email) for all users
+
+
+app.get("/user",(req,res)=>{
+    let q= 'SELECT * FROM user';
+
+    try{
+        connection.query(q,(err,result)=>{
+            if(err) throw err;
+            let data = result;
+            console.log(data);
+            res.render("user.ejs",{data});
+        });
+
+    }catch(err){
+ res.send("some error occurred");
+    }
+});
+
+edit
+
+get/user/:id/edit   to get form to edit the username, based on id this form will require a password
+
+
