@@ -84,6 +84,8 @@ app.get("/",(req,res)=>{
 
 })
 
+{TO RUN: SOURCE SCHEMA.SQL}
+
 CREATING OUR ROUTES
 
 GET/user  Fetch & show (userid, username, email) for all users
@@ -110,3 +112,15 @@ edit
 get/user/:id/edit   to get form to edit the username, based on id this form will require a password
 
 
+ROUTING -- DATABASES
+REST
+
+GET/  shows no of users in database
+
+GET /user  shows user(email,id,username) ejs-template
+
+PATCH /user/:id  username edit
+
+post  /user  new user
+
+delete /user/:id   user delete (ask password before delete better)
