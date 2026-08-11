@@ -124,3 +124,9 @@ PATCH /user/:id  username edit
 post  /user  new user
 
 delete /user/:id   user delete (ask password before delete better)
+
+
+GET /users/:id/edit   to get form to edit the username, based on id
+                      This form will reqire a password
+
+PATCH  /users/:id    to edit username, if correct password was entered in form                       
