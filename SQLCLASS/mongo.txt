@@ -1,0 +1,354 @@
+THE SHELL
+
+mongosh // to start SHELL
+use college  // to create and use a new database called college
+
+to clear shell (ctrl +k)
+some cmds
+
+help
+show dbs (return databases)
+exit -- exit from shell
+
+(its a type of js) REFL
+try{
+    1+2
+    "gudapurkoushik".toUppercase();
+}
+
+afterinstalling mongodb its create default test db.(its temp not shown).
+
+to show current db  db
+
+
+BSON database
+Binary JSON
+
+
+
+JSON                                     BSON
+
+text based                              binary based 
+
+space inefficient    check in website
+
+
+Collections
+
+Documents: Mongo stores data in form of documents (BSON docs)
+
+Collection: mongodb stores documents in collections
+
+INSERT in db
+
+insertOne
+
+db.collection.insertOne()    --inserts a single document into a collection
+
+show collections   (show tables kinda)
+
+db.student.insertOne({name:"adam",marks:79})
+
+db.student.find()
+
+
+if a collection does not exist, mongodb creates the collection when you first store data for that collection.
+college> show collections
+
+college> db.student.insertOne({name:"G.Koushik",age: 21 ,mobile:"799340XXXX",branch:"CSE"});
+{
+  acknowledged: true,
+  insertedId: ObjectId('6a7c017fd90c1d9374460c2b')
+}
+college> db.student.find()
+[
+  {
+    _id: ObjectId('6a7c017fd90c1d9374460c2b'),
+    name: 'G.Koushik',
+    age: 21,
+    mobile: '799340XXXX',
+    branch: 'CSE'
+  }
+]
+college> db.student.insertOne({name:"B. Aditya",age: 20 ,mobile:"970413XXXX",branch:"CSE"});
+{
+  acknowledged: true,
+  insertedId: ObjectId('6a7c01e2d90c1d9374460c2c')
+}
+college> db.student.find()
+[
+  {
+    _id: ObjectId('6a7c017fd90c1d9374460c2b'),
+    name: 'G.Koushik',
+    age: 21,
+    mobile: '799340XXXX',
+    branch: 'CSE'
+  },
+  {
+    _id: ObjectId('6a7c01e2d90c1d9374460c2c'),
+    name: 'B. Aditya',
+    age: 20,
+    mobile: '970413XXXX',
+    branch: 'CSE'
+  }
+]
+
+INSERT MULTIPLE
+insertMany({},{},{});
+
+college> show collections
+student
+college> db.student.insertMany([{name:"P. Sampath",age:21,city:"Nalgonda",branch:"IT"},{name:"T. Narender",age:21,city:"Nalgonda",salary:41000},{name:"ram charan",age:23,city:"Hyderabad",hobby:"Anime & Sports"}]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('6a7c0386d90c1d9374460c2d'),
+    '1': ObjectId('6a7c0386d90c1d9374460c2e'),
+    '2': ObjectId('6a7c0386d90c1d9374460c2f')
+  }
+}
+college> db.student.find()
+[
+  {
+    _id: ObjectId('6a7c017fd90c1d9374460c2b'),
+    name: 'G.Koushik',
+    age: 21,
+    mobile: '799340XXXX',
+    branch: 'CSE'
+  },
+  {
+    _id: ObjectId('6a7c01e2d90c1d9374460c2c'),
+    name: 'B. Aditya',
+    age: 20,
+    mobile: '970413XXXX',
+    branch: 'CSE'
+  },
+  {
+    _id: ObjectId('6a7c0386d90c1d9374460c2d'),
+    name: 'P. Sampath',
+    age: 21,
+    city: 'Nalgonda',
+    branch: 'IT'
+  },
+  {
+    _id: ObjectId('6a7c0386d90c1d9374460c2e'),
+    name: 'T. Narender',
+    age: 21,
+    city: 'Nalgonda',
+    salary: 41000
+  },
+  {
+    _id: ObjectId('6a7c0386d90c1d9374460c2f'),
+    name: 'ram charan',
+    age: 23,
+    city: 'Hyderabad',
+    hobby: 'Anime & Sports'
+  }
+]
+
+
+FIND in db
+
+db.collection.find()    //returns everything
+
+
+for specific queries
+
+db.collection.find({key:value})   --return cursor  (it returns in [{}]) it reference to original
+db.collection.findOne({key:value})  --return document (its return in {}) --original
+
+college> db.student.find({city:"Nalgonda"});
+[
+  {
+    _id: ObjectId('6a7c0386d90c1d9374460c2d'),
+    name: 'P. Sampath',
+    age: 21,
+    city: 'Nalgonda',
+    branch: 'IT'
+  },
+  {
+    _id: ObjectId('6a7c0386d90c1d9374460c2e'),
+    name: 'T. Narender',
+    age: 21,
+    city: 'Nalgonda',
+    salary: 41000
+  }
+]
+college> db.student.find({salary:41000});
+[
+  {
+    _id: ObjectId('6a7c0386d90c1d9374460c2e'),
+    name: 'T. Narender',
+    age: 21,
+    city: 'Nalgonda',
+    salary: 41000
+  }
+]
+college> db.student.findOne({city:"Nalgonda"});
+{
+  _id: ObjectId('6a7c0386d90c1d9374460c2d'),
+  name: 'P. Sampath',
+  age: 21,
+  city: 'Nalgonda',
+  branch: 'IT'
+}
+
+
+
+//FIND in db
+
+Query operators
+
+Find students where marks > 75
+
+db.student.find({mark:{$gt:75}})
+
+Find students who live in Nalgonda or Hyderabad
+
+db.student.find({city:{$in:["Nalgonda","Hyderabad"]}})
+
+Find students who scored > 75 or live in Nalgonda
+
+db.student.find({$or:[{marks:{$gt:75}}.{city:"Nalgonda"}]})
+
+
+UPDATE in db
+
+updateOne
+
+db.collection.updateOne(<filter>,<update>,<option>)
+
+db.student.updateOne({salary:41000},{$set:{rank:"topper"}});
+
+
+college> db.student.updateOne({salary:41000},{rank:"topper"});
+MongoInvalidArgumentError: Update document requires atomic operators
+college> db.student.updateOne({salary:41000},{$set: {rank:"topper"}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+college> db.student.findOne({city:"Nalgonda"});
+{
+  _id: ObjectId('6a7c0386d90c1d9374460c2d'),
+  name: 'P. Sampath',
+  age: 21,
+  city: 'Nalgonda',
+  branch: 'IT'
+}
+college> db.student.find({salary:41000});
+[
+  {
+    _id: ObjectId('6a7c0386d90c1d9374460c2e'),
+    name: 'T. Narender',
+    age: 21,
+    city: 'Nalgonda',
+    salary: 41000,
+    rank: 'topper'
+  }
+]
+we can also do many update
+
+db.collection.updateMany({})  --update all documents that match a specific filter
+
+db.collection.replaceOne() --replace at most a single document that match a specficed even though mutiple documents may match the specficed filter
+
+college> db.student.updateMany({city:"Nalgonda"},{$set: {city:"Hyderabad"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 2,
+  upsertedCount: 0
+}
+college> db.student.find()
+[
+  {
+    _id: ObjectId('6a7c017fd90c1d9374460c2b'),
+    name: 'G.Koushik',
+    age: 21,
+    mobile: '799340XXXX',
+    branch: 'CSE'
+  },
+  {
+    _id: ObjectId('6a7c01e2d90c1d9374460c2c'),
+    name: 'B. Aditya',
+    age: 20,
+    mobile: '970413XXXX',
+    branch: 'CSE'
+  },
+  {
+    _id: ObjectId('6a7c0386d90c1d9374460c2d'),
+    name: 'P. Sampath',
+    age: 21,
+    city: 'Hyderabad',
+    branch: 'IT'
+  },
+  {
+    _id: ObjectId('6a7c0386d90c1d9374460c2e'),
+    name: 'T. Narender',
+    age: 21,
+    city: 'Hyderabad',
+    salary: 41000,
+    rank: 'topper'
+  },
+  {
+    _id: ObjectId('6a7c0386d90c1d9374460c2f'),
+    name: 'ram charan',
+    age: 23,
+    city: 'Hyderabad',
+    hobby: 'Anime & Sports'
+  }
+]
+college> dp.student.replaceOne({name:"ram charan"},{name:"S. Ram"});
+ReferenceError: dp is not defined
+college> db.student.replaceOne({name:"ram charan"},{name:"S. Ram"});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+
+different operations
+ $addFields
+ $set
+ $project
+ $unset
+ $replaceRoot
+ $replaceWith
+
+
+ //NESTING
+
+{
+    id:..
+    name:farah
+    performance:{marks:88,grade:'A'}
+
+
+}
+to find
+
+db.student.findOne({"performance.marks":88});
+
+
+DELETE in db
+
+DELETEONE
+
+
+db.collection.deleteOne(<filter>,<options>)
+
+DeleteMany
+
+db.collection.deleteMany(<filter>,<option>)
+
+to makedatabase empty -- db.student.deleteMany({});
+
+db.dropDatabase();
