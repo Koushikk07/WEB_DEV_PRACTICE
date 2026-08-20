@@ -1,0 +1,7 @@
+Mongoose
+
+A library that creates a connection between mongoDb & node.js js runtime Env
+
+it is ODM (Object Data Modeling) library
+
+npm install mongoose
