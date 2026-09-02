@@ -5,3 +5,67 @@ A library that creates a connection between mongoDb & node.js js runtime Env
 it is ODM (Object Data Modeling) library
 
 npm install mongoose
+
+
+SCHEMA
+
+Schema defines the shape of the documents within that collection
+
+example:
+
+const userSchema = new mongoose.Schema({
+    name:String,
+    email: String,
+    age: Number
+});
+
+
+Models
+
+model in mongoose is a class with which we construct documents
+
+const User = mongoose.model("User",userSchema); //User--> users  (first letter small and singluar to pru ex: Product-> products)
+
+INSERT
+
+inserting one    using mongoose
+
+const user1 =new User({name:"Gudapur Koushik",email:"xyz@gmail.com",age:48});
+user1.save() -- to save to database
+
+ type node terminal then .load index.js
+
+ //--> inserting multiple
+
+ User.insertMany([
+    {name:"Tupakula Narender",email:"abc123@gmail.com",age:21},
+    {name:"Vattikoti Venu",email:"xy4523@gmail.com",age:22},
+    {name:"Sattu Ram",email:"dfgdfg32@gmail.com",age:41},
+    {name:"Pendem Sampath",email:"abhte223@gmail.com",age:53},
+    {name:"kota Abhishek",email:"xyz343@gmail.com",age:28},
+ ]).then((data)=>{
+    console.log(data);
+ })
+
+ NOTE:  Mongoose uses Operation Buffering
+
+ Mongoose lets you start using models immediately, without waiting for mongoose to establish a connection to mongoDB.
+
+ FIND
+
+ Model.find() //returns a Query Object (thennable)
+
+ *Mongoose Queries are not promises. But they have a .then()
+
+ User.find().then((data)=>{
+    console.log(data);
+ })
+
+ User.find({age:{$gte:25}}).then((data)=>{
+    console.log(data);
+ })
+
+ User.findByid("xxxxxxxxx").then((res)=>{console.log(res);})
+ .catch((err)=>{
+    console.log("error:",err);
+ })
