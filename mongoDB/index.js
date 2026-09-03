@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 //let url = "https://localhost:8000/users";
 
-mongoose.connect("mongodb://127.0.0.1:27017/test");
+//mongoose.connect("mongodb://127.0.0.1:27017/test");
 
 main()
   .then((res) => {
@@ -45,6 +45,16 @@ user2.save(); */
   console.log(data);
 });
  */
-User.find({ age: { $gte: 25 } }).then((data) => {
-  console.log(data);
+/* User.find({ age: { $gte: 25 } }).then((data) => {
+  //findOne
+  console.log(data[0].name);
 });
+ */
+/* User.updateOne({ name: "Gudapur Koushik" }, { age: 22 }).then((res) => {
+  console.log(res);
+}); */
+
+User.deleteOne({ name: "Gudapur Koushik" }).then((res) => {
+  console.log(res);
+});
+//User.deleteMany

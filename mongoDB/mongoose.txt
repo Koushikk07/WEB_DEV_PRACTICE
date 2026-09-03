@@ -65,7 +65,128 @@ user1.save() -- to save to database
     console.log(data);
  })
 
- User.findByid("xxxxxxxxx").then((res)=>{console.log(res);})
+ User.findByid("1xxxxxxxx").then((res)=>{console.log(res);})
  .catch((err)=>{
     console.log("error:",err);
  })
+
+  User.findOne("xxxxxxxxx").then((res)=>{console.log(res);})
+ .catch((err)=>{
+    console.log("error:",err);
+ })
+
+
+ UPDATE
+
+ Model.updateOne()
+
+ User.updateOne({name: "Gudapur Koushik"},{age:21}).then((res)=>{
+   console.log(res);
+ })   //{filter},{update }
+
+ Model.updateMany()
+
+  User.updateOne({age:{$gte:21}},{age:21}).then((res)=>{
+   console.log(res);
+ })
+
+ Model.findOneAndUpdate()
+
+ User.findOneAndUpdate({name:"Gudapur"},{age:60},{new:true}).then((data)=>{
+   console.log(data);  //new returns updated
+
+ })
+
+ same: 
+ Model.findByidAndUpdate()
+
+ DELETE 
+
+ Model.deleteOne() //returns count
+
+ User.deleteOne({name:"Gudapur Koushik"}).then((res)=>{
+   console.log(res);
+ });
+
+Model.deleteMany() //returns count
+
+ User.deleteMany({age:{$gte:21}}).then((res)=>{
+   console.log(res);
+ });
+
+ //same as previous update it return what it deleted
+
+ Model.findByidAndDelete()
+ Model.findOneAndDelete()
+
+Schema Validations
+
+basically, Rules for Schema
+
+const bookSchema = mongoose.Schema({
+   title:{
+      type:String,
+      required:true
+   },
+   author:{
+      type:String,
+   },
+   price:{
+      type:Number,
+   },
+})
+
+
+SCHEMA VALIDATIONS 
+
+SchemaType Options
+
+const bookSchema  = moogoose.Schema({
+
+title:{
+type:String,
+required:true,
+},
+author:{
+type:String,
+},
+price:{
+type:Number,
+min:[1,"Please enter a valid Price"],
+},
+discount:{
+type:Number,
+default:0,
+},
+genre:[String],
+category:{
+   type:String,
+   enum:["fiction","non-fiction"],
+}
+
+
+});
+
+
+SCHEMA VALIDATIONS
+
+UPDATE
+
+.. think we put in schema min 100, try to update data using findbyidandupdate price -500
+here rules wont work(schema validation wont work , only for insertion
+
+if rules also works for updation  .. use {runValidators:true}  .. in updatebyidandupdate
+
+ex. book.findbyidandupdate("idddsdsds",{price:-500},{runValidators:true}).then((res)=>{console.log(res)}) .catch((err)=>{console.log(err)});
+
+to define error
+
+price :{
+   type:Number,
+   min:[1,"enter valid num"];  if below 1 it throw enter valid num
+
+}
+
+handing errors
+
+console.log(err.errors.category.properties.message); tryit out  // it returns enter valid num
