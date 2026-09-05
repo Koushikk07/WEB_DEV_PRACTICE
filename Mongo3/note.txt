@@ -32,3 +32,21 @@ module.exports = Chat;
 Initialize Database
 
 init.js
+
+chatS
+
+Get  /chats  // show all chats
+
+
+new and create route
+
+GET /chats/new   --> form render (message/chat)   call by button
+
+POST /chats  -- DB insert chat
+
+
+Edit & update route
+
+GET /chats/:id/Edit
+
+PUT  /chats/:id

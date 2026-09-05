@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Chat - Mini WhatsApp</title>
+
+    <link rel="stylesheet" href="/new.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="chat-header">
+        <h2>💬 New Chat</h2>
+        <p>Start a new conversation</p>
+      </div>
+
+      <form action="/chats" method="POST">
+        <div class="form-group">
+          <label>From</label>
+          <input type="text" name="from" placeholder="Who are you?" required />
+        </div>
+
+        <div class="form-group">
+          <label>Message</label>
+          <textarea
+            name="msg"
+            placeholder="Write your message here..."
+            required
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>To</label>
+          <input type="text" name="to" placeholder="Add receiver" required />
+        </div>
+
+        <button type="submit">Create Chat</button>
+      </form>
+
+      <a href="/chats" class="back"> ← Back to Chats </a>
+    </div>
+  </body>
+</html>
