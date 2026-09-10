@@ -50,3 +50,7 @@ Edit & update route
 GET /chats/:id/Edit
 
 PUT  /chats/:id
+
+destroy
+
+delete /chats/:id
