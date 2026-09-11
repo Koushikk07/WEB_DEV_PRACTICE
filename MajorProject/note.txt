@@ -1,0 +1,12 @@
+phase 1--
+setting database and apis
+
+create connection , database
+
+model: listing
+title
+description
+image
+price
+location
+country
