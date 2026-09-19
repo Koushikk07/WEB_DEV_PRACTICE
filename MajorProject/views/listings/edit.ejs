@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Edit Listing - WanderLust</title>
+
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <a href="/listing" class="logo">WanderLust</a>
+    </nav>
+
+    <main class="container">
+      <div class="form-card">
+        <h1 class="page-title">Edit Listing</h1>
+
+        <form action="/listings/<%= listing._id %>?_method=PUT" method="POST">
+          <div class="form-group">
+            <label for="title">Title</label>
+
+            <input
+              type="text"
+              id="title"
+              name="listing[title]"
+              value="<%= listing.title %>"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="description">Description</label>
+
+            <textarea
+              id="description"
+              name="listing[description]"
+              rows="5"
+              required
+            >
+<%= listing.description %></textarea
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="imageUrl">Image URL</label>
+
+            <input
+              type="url"
+              id="imageUrl"
+              name="listing[image][url]"
+              value="<%= listing.image.url %>"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="price">Price per night</label>
+
+            <input
+              type="number"
+              id="price"
+              name="listing[price]"
+              value="<%= listing.price %>"
+              min="0"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="location">Location</label>
+
+            <input
+              type="text"
+              id="location"
+              name="listing[location]"
+              value="<%= listing.location %>"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="country">Country</label>
+
+            <input
+              type="text"
+              id="country"
+              name="listing[country]"
+              value="<%= listing.country %>"
+              required
+            />
+          </div>
+
+          <button type="submit" class="submit-btn">Update Listing</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

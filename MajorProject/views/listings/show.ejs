@@ -3,16 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>wanderlast</title>
+
+    <title><%= listing.title %> - WanderLust</title>
+
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
+
   <body>
-    <h1>Listing Details:</h1>
-    <ul>
-      <li><%=listing.title%></li>
-      <li><%=listing.description%></li>
-      <li><%=listing.price%></li>
-      <li><%=listing.location%></li>
-      <li><%=listing.country%></li>
-    </ul>
+    <nav class="navbar">
+      <a href="/listing" class="logo">WanderLust</a>
+    </nav>
+
+    <main class="container">
+      <div class="details-card">
+        <img src="<%= listing.image.url %>" alt="<%= listing.title %>" />
+
+        <div class="details-content">
+          <h1><%= listing.title %></h1>
+
+          <p><%= listing.description %></p>
+
+          <p class="price">
+            ₹<%= listing.price.toLocaleString("en-IN") %> / night
+          </p>
+
+          <p class="location">
+            📍 <%= listing.location %>, <%= listing.country %>
+          </p>
+
+          <a href="/listings/<%=listing._id%>/edit" class="back-btn">
+            Edit Listing
+          </a>
+          <form action="/listings/<%=listing._id%>?_method=DELETE">
+            <button>DELETE</button>
+          </form>
+          <a href="/listings" class="back-btn"> ← Back to Listings </a>
+        </div>
+      </div>
+    </main>
   </body>
 </html>

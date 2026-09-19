@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Create New Listing - WanderLust</title>
+
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <a href="/listing" class="logo">WanderLust</a>
+    </nav>
+
+    <main class="container">
+      <div class="form-card">
+        <h1 class="page-title">Create a New Listing</h1>
+
+        <form action="/listing" method="POST">
+          <!-- Title -->
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input
+              type="text"
+              id="title"
+              name="listing[title]"
+              placeholder="Enter listing title"
+              required
+            />
+          </div>
+
+          <!-- Description -->
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea
+              id="description"
+              name="listing[description]"
+              rows="5"
+              placeholder="Describe your listing"
+              required
+            ></textarea>
+          </div>
+
+          <!-- Image URL -->
+          <div class="form-group">
+            <label for="imageUrl">Image URL</label>
+            <input
+              type="url"
+              id="imageUrl"
+              name="listing[image]"
+              placeholder="https://example.com/image.jpg"
+              required
+            />
+          </div>
+
+          <!-- Price -->
+          <div class="form-group">
+            <label for="price">Price per night</label>
+            <input
+              type="number"
+              id="price"
+              name="listing[price]"
+              placeholder="Enter price"
+              min="0"
+              required
+            />
+          </div>
+
+          <!-- Location -->
+          <div class="form-group">
+            <label for="location">Location</label>
+            <input
+              type="text"
+              id="location"
+              name="listing[location]"
+              placeholder="Enter location"
+              required
+            />
+          </div>
+
+          <!-- Country -->
+          <div class="form-group">
+            <label for="country">Country</label>
+            <input
+              type="text"
+              id="country"
+              name="listing[country]"
+              placeholder="Enter country"
+              required
+            />
+          </div>
+
+          <button type="submit" class="submit-btn">Add Listing</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

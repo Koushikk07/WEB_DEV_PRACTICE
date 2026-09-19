@@ -1,15 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WanderLust</title>
-  </head>
-  <body>
-    <h3>All Listings</h3>
-    
-<%for(let list of allListings){%>
-    <li><a href="/listing/<%=list.id%>"><%=list.title%></a></li>
-<%}%>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>WanderLust - All Listings</title>
+
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <a href="/listing" class="logo">WanderLust</a>
+  </nav>
+
+  <main class="container">
+
+    <h1 class="page-title">Explore Listings</h1>
+    <form action="/listings/new" method="GET">
+      <button>Create</button>
+    </form>
+
+    <div class="listings-grid">
+
+      <% for(let list of allListings) { %>
+
+        <div class="listing-card">
+
+          <a href="/listings/<%= list._id %>">
+
+            <img
+              src="<%= list.image.url %>"
+              alt="<%= list.title %>"
+            >
+
+          </a>
+
+          <div class="card-content">
+
+            <h3>
+              <%= list.title %>
+            </h3>
+
+            <p>
+              <%= list.location %>, <%= list.country %>
+            </p>
+
+            <p class="price">
+              ₹<%= list.price.toLocaleString("en-IN") %> / night
+            </p>
+
+          </div>
+
+        </div>
+
+      <% } %>
+
+    </div>
+
+  </main>
+
+</body>
 </html>
