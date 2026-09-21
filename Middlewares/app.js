@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const ExpressError = require("./ExpressError");
 
 //middleware --> response send
 
@@ -29,10 +30,50 @@ app.use("/api", (req, res, next) => {
     next();
   }
   //res.send("ACESS DENIED");//
-  throw new Error("ACCESS DENIED!");
+  //throw new Error("ACCESS DENIED!");
+  throw new ExpressError(401, "ACCESS DENIED!");
 });
 //Error Handling
+//activity
+app.get("/admin", (req, res) => {
+  throw new ExpressError(403, "Access to admin is forbidden");
+});
+app.use((err, req, res, next) => {
+  /*  console.log(err);
+  next(); */ // next non err handling middlewares
+  //next(err);  next err handling middlewares
 
+  let { status = 500, message = "Some Error Occurred" } = err;
+  res.status(status).send(message);
+});
+
+// mini whatsapp error handling
+
+function asyncWrap(fn) {
+  return function (req, res, next) {
+    fn(req, res, next).catch((err) => next(err));
+  };
+}
+
+app.get(
+  "/chats/:id",
+  asyncWrap(async (req, res, next) => {
+    // piece of code
+  }),
+);
+// mongoose errors
+const handleValidationErr = (err) => {
+  console.log("Validation Error occurred");
+  return err;
+};
+
+app.use((err, req, res, next) => {
+  console.log(err.name);
+  if (err.name == "ValidationError") {
+    err = handleValidationErr(err);
+  }
+  next(err);
+});
 //multiple middlewares
 const checkTokens = (req, res, next) => {
   let { token } = req.query;
