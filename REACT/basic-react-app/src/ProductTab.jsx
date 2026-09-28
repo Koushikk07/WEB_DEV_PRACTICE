@@ -4,9 +4,9 @@ function ProductTab()
 {
     return(
         <>
-        <Product/>
-        <Product/>
-        <Product/>
+        <Product title="phone"/>
+        <Product title="Laptop"/>
+        <Product title="pen"/>
         </>
     );
 }
