@@ -1,5 +1,7 @@
 import './App.css'
 import ProductTab from './ProductTab'
+import MsgBox from './MsgBox'
+//import Product from './Product';
 //import Title from './Title.jsx'
 
 //import Product from './Product.jsx'
@@ -30,7 +32,13 @@ function App() { //app component
     </>
   ); */
 
-  return <ProductTab/>;
+  return (
+     <>
+    <MsgBox userName="Koushik" textColor="yellow"/>
+    <MsgBox userName="Thinkpad" textColor="skyblue"/>
+    <ProductTab/>
+    </>
+  );
  
 }
 
