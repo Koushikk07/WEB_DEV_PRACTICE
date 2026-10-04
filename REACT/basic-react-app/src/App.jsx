@@ -1,6 +1,7 @@
 import './App.css'
-import ProductTab from './ProductTab'
-import MsgBox from './MsgBox'
+/* import ProductTab from './ProductTab'
+import MsgBox from './MsgBox' */
+import Button from "./Button.jsx";
 //import Product from './Product';
 //import Title from './Title.jsx'
 
@@ -34,9 +35,10 @@ function App() { //app component
 
   return (
      <>
-    <MsgBox userName="Koushik" textColor="yellow"/>
-    <MsgBox userName="Thinkpad" textColor="skyblue"/>
-    <ProductTab/>
+{/*  //  <MsgBox userName="Koushik" textColor="yellow"/>
+    //<MsgBox userName="Thinkpad" textColor="skyblue"/>
+   // <ProductTab/>  */}
+    <Button/>
     </>
   );
  
