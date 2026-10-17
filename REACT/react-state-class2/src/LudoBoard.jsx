@@ -30,9 +30,9 @@ export default function LudoBoard()
             return {...prevMoves, blue: prevMoves.blue+1};
         });
 
-        arr.push("Blue Moves");
-        setArr(arr);
-        console.log(arr);
+        //arr.push("Blue Moves");
+        setArr([...arr,"blue moves"]);
+        console.log(arr); 
     }   
     let updateYellow=()=>{
        // moves.blue+=1;
