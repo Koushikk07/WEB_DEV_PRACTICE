@@ -1,0 +1,7 @@
+.Ticket {
+    border: 4px solid pink;
+    border-radius: 12px;
+    width: 300px;
+    font-size: larger;
+    align-items: center;
+}
