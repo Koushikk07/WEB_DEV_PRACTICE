@@ -12,17 +12,27 @@ export default function Form()
 
     let handleInputChange = (event) =>{
         let fieldName = event.target.name;
-        console.log(fieldName); //fullname;
+        //fullname;
         let fieldValue = event.target.value;
-        console.log(fieldValue); //value
+         //value
 
         setFormData(
             (currData)=>{
-                currData[fieldName] = fieldValue;
+                
                  ///computed property name.
-                 return {...currData};
+                 return {...currData,[fieldName] : fieldValue};
             }
         );
+    }
+
+    let handleSubmit = (event)=>{
+        event.preventDefault();
+        console.log(formData);
+        setFormData({
+            fullName:"",
+            userName:"",
+            password:""
+        });
     }
     /* let [fullName,setFullName] = useState("");
     let [userName,setUserName] = useState("");
@@ -44,7 +54,7 @@ export default function Form()
     } */
 
     return(
-        <form action="">
+        <form onSubmit={handleSubmit}>
             <label htmlFor="fullname">Full Name: </label>
             <input type="text" placeholder="Enter The Full Name " value={formData.fullName}  id="fullname" name="fullName" onChange={handleInputChange}/><br /><br />
             <label htmlFor="username">Username:</label>

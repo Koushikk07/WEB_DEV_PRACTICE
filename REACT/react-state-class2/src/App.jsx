@@ -1,5 +1,7 @@
 import './App.css'
-import Form from './Form'
+//import CommentForm from './CommentForm'
+import Counter from './Counter'
+//import Form from './Form'
 //import Lottery from './Lottery'
 /*  import LudoBoard from './LudoBoard'*/
 //import TodoList from './TodoList'
@@ -15,7 +17,7 @@ function App() {
     <>
  
    {/* <Lottery n={4} winCondition={winCondition}/> */}
-   <Form/>
+  <Counter/>
     </>
   )
 }
