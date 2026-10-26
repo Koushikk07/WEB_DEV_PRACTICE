@@ -2,13 +2,13 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import './SearchBox.css';
 import { useState } from 'react';
-export default function SearchBox()
+export default function SearchBox({updateInfo})
 
 {
     const API_URL ="https://api.openweathermap.org/data/2.5/weather";
     const API_KEY = "94b531516f764c9f3a574cba68ed1d9a";
  
-     let getWeatherInfo = async(city)=>{
+     let getWeatherInfo = async()=>{
 
         let response = await fetch(`${API_URL}?q=${city}&appid=${API_KEY}&units=metric`);
         let jsonRes = await  response.json();
@@ -28,6 +28,7 @@ export default function SearchBox()
 
         }
         console.log(result);
+        return result;
      }
 
     let [city,setCity] = useState("Hyderabad");
@@ -37,15 +38,16 @@ export default function SearchBox()
 
     }
 
-    let handleSubmit = (evt)=>{
+    let handleSubmit = async (evt)=>{
         evt.preventDefault();
         //console.log(city);
         setCity("");
-        getWeatherInfo(city);
+        let newInfo = await getWeatherInfo();
+        updateInfo(newInfo);
     }
     return(
         <div className='SearchBox'>
-            <h3>Search for the weather</h3>
+            
             <form action="" onSubmit={handleSubmit}>
                  <TextField id="city" label="Enter The City" variant="outlined" size='small' required value={city} onChange={handleChange}/> &nbsp;
             <Button variant="contained" type='submit' >Search</Button>
